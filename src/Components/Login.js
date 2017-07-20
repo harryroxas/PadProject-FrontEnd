@@ -5,7 +5,8 @@ const Login = ({
       email,
       password,
       onChangeEmail,
-      onChangePassword
+      onChangePassword,
+      onSubmitLogin
   }) => {
     return (
       <div>
@@ -15,7 +16,7 @@ const Login = ({
       <GridColumn width={7}>
       <Header textAlign="center">Iskollection</Header>
       <Segment>
-      <Form>
+      <Form onSubmit={onSubmitLogin}>
       <Grid>
       <GridRow>
         <GridColumn>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { submitLogin } from '../api'
 import Login from './Login';
 
 class LoginContainer extends Component {
@@ -9,6 +9,17 @@ class LoginContainer extends Component {
 			newEmail: '',
 			newPassword: ''
 		};
+	}
+
+	onSubmitLogin = e => {
+		e.preventDefault();
+
+		const body = {
+			email: this.state.newEmail,
+			password: this.state.newPassword
+		}
+
+		submitLogin(body);
 	}
 
 	onChangeEmail = e => {
@@ -31,6 +42,7 @@ class LoginContainer extends Component {
         			password={this.state.newPassword}
         			onChangeEmail={this.onChangeEmail.bind(this)}
         			onChangePassword={this.onChangePassword.bind(this)}
+        			onSubmitLogin={this.onSubmitLogin.bind(this)}
         		/>
       		</div>
     	);
