@@ -1,3 +1,9 @@
 .App {
   text-align: center;
+  min-height: 80%;
+}
+
+.container {
+  min-height: 80%;
+  min-width: 100%;
 }

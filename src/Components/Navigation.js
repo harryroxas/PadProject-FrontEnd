@@ -3,11 +3,14 @@ import { Menu, Segment, Input, Dropdown } from 'semantic-ui-react';
 
 class Navigation extends Component {
     render() {
-        const activeItem = this.props.activeTab;
-
+        const activeItem = this.props.state.activeTab;
+        
         return(
             <Segment inverted>
                 <Menu inverted pointing secondary fluid>
+                    <Menu.Menu>
+                        <Menu.Item icon='content' onClick={this.props.toggleSideBar} />
+                    </Menu.Menu>
                     <Menu.Item name='home' active={activeItem === 'home'} onClick={this.props.changeTab} />
                     <Menu.Item name='repositories' active={activeItem === 'repositories'} onClick={this.props.changeTab} />
                     <Menu.Menu>
