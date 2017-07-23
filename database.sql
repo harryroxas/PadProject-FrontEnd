@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS iskollection; 
 CREATE DATABASE iskollection;
 USE iskollection;
+
 CREATE TABLE users(
 	firstName VARCHAR(50) NOT NULL,
 	lastName VARCHAR(50) NOT NULL,
