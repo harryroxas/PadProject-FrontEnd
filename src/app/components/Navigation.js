@@ -7,19 +7,19 @@ class Navigation extends Component {
         
         return(
             <Segment inverted>
-                <Menu inverted pointing secondary fluid>
+                <Menu inverted secondary fluid stackable pointing size='small'>
                     <Menu.Menu>
                         <Menu.Item icon='content' onClick={this.props.toggleSideBar} />
                     </Menu.Menu>
-                    <Menu.Item name='home' active={activeItem === 'home'} onClick={this.props.changeTab} />
-                    <Menu.Item name='repositories' active={activeItem === 'repositories'} onClick={this.props.changeTab} />
+                    <Menu.Item name='home' content='Home' active={activeItem === 'home'} onClick={this.props.changeTab} />
+                    <Menu.Item name='repositories' content='Repositories' active={activeItem === 'repositories'} onClick={this.props.changeTab} />
                     <Menu.Menu>
                         <Menu.Item>
                             <Input icon='search' placeholder='Search...' />
                         </Menu.Item>
                     </Menu.Menu>
                     <Menu.Menu position='right'>
-                        <Dropdown item text='User' onClick={this.props.changeTab}>
+                        <Dropdown name='user' item text='User' onClick={this.props.changeTab}>
                             <Dropdown.Menu>
                             <Dropdown.Item>My Account</Dropdown.Item>
                             <Dropdown.Item>Log out</Dropdown.Item>

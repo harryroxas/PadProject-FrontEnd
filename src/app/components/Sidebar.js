@@ -7,8 +7,8 @@ class NavSidebar extends Component {
 
         return(
             <Sidebar as={Menu} animation='overlay' width='wide' visible={visible} icon='labeled' vertical >
-                <Menu.Item icon='home' name='home' onClick={this.props.clickHome} />
-                <Menu.Item name='repositories' icon='folder' />
+                <Menu.Item icon='home' name='home' onClick={this.props.clickSidebar} />
+                <Menu.Item icon='folder' name='repositories' onClick={this.props.clickSidebar}/>
             </Sidebar>
         );
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Sidebar, Menu, Icon, Advertisement } from 'semantic-ui-react';
-import './App.css';
+import '../assets/App.css';
 
 import Navigation from './Components/Navigation';
 import NavSidebar from './Components/Sidebar.js';
@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      activeTab: 'repositories',
+      activeTab: 'home',
       sidebar: false,
     };
   }
@@ -22,8 +22,8 @@ class App extends Component {
     this.setState({sidebar: !this.state.sidebar})
   };
 
-  sidebarClickHome = (e) => {
-    this.setState({activeTab: 'home'})
+  sidebarClickSidebarMenu = (e, {name}) => {
+    this.setState({activeTab: name})
     this.toggleSideBar();
   }
 
@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <Sidebar.Pushable>
-          <NavSidebar visible={this.state.sidebar} clickHome={this.sidebarClickHome}/>
+          <NavSidebar visible={this.state.sidebar} clickSidebar={this.sidebarClickSidebarMenu}/>
           <Sidebar.Pusher>
             <Navigation 
               state={this.state} 
