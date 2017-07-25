@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Sidebar, Menu, Icon, Advertisement } from 'semantic-ui-react';
 import '../assets/App.css';
 
-import Navigation from './Components/Navigation';
-import NavSidebar from './Components/Sidebar.js';
+import Navigation from './navigation/Navigation';
+import NavSidebar from './navigation/Sidebar.js';
 
 class App extends Component {
   constructor() {
