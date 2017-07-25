@@ -14,14 +14,11 @@ var con = mysql.createConnection({
 con.connect();
 
 app.get('/login', function(req, res){
-  //if(sess.body) res.render('home');
     con.query("SELECT * FROM users WHERE email = '" + req.body.email + "' AND password = '" + req.body.password + "'", function (err, result, fields) {
     if(result.length > 0){  
-      //res.redirect('/home');
       console.log("Logged in successfully");
       currentUser = result[0];
     }else{
-      //res.redirect('/');
       console.log("Wrong email or password.");
     }
   });
