@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Menu, Segment, Input, Dropdown } from 'semantic-ui-react'; 
+import { Menu, Segment, Input, Dropdown } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom'; 
 
 class Navigation extends Component {
     render() {
@@ -7,12 +8,12 @@ class Navigation extends Component {
         
         return(
             <Segment inverted>
-                <Menu inverted secondary fluid stackable pointing size='small'>
+                <Menu inverted pointing secondary fluid>
                     <Menu.Menu>
                         <Menu.Item icon='content' onClick={this.props.toggleSideBar} />
                     </Menu.Menu>
-                    <Menu.Item name='home' content='Home' active={activeItem === 'home'} onClick={this.props.changeTab} />
-                    <Menu.Item name='repositories' content='Repositories' active={activeItem === 'repositories'} onClick={this.props.changeTab} />
+                    <Menu.Item as={NavLink} name='home' to='home' active={activeItem === 'home'} onClick={this.props.changeTab} />
+                    <Menu.Item as={NavLink} name='repositories' to='repositories' active={activeItem === 'repositories'} onClick={this.props.changeTab} />
                     <Menu.Menu>
                         <Menu.Item>
                             <Input icon='search' placeholder='Search...' />

@@ -1,47 +1,20 @@
 import React, { Component } from 'react';
-import { Sidebar, Menu, Icon, Advertisement } from 'semantic-ui-react';
-import '../assets/App.css';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
-import Navigation from './Components/Navigation';
-import NavSidebar from './Components/Sidebar.js';
+import LoginContainer from './pages/LoginContainer';
+import RepoContainer from './pages/RepoContainer';
+import HomeContainer from './pages/HomeContainer';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      activeTab: 'home',
-      sidebar: false,
-    };
-  }
-
-  changeTab = (e, {name}) => {
-    this.setState({activeTab: name})
-  };
-
-  toggleSideBar = () => {
-    this.setState({sidebar: !this.state.sidebar})
-  };
-
-  sidebarClickSidebarMenu = (e, {name}) => {
-    this.setState({activeTab: name})
-    this.toggleSideBar();
-  }
-
   render() {
     return (
-      <div className="App">
-        <Sidebar.Pushable>
-          <NavSidebar visible={this.state.sidebar} clickSidebar={this.sidebarClickSidebarMenu}/>
-          <Sidebar.Pusher>
-            <Navigation 
-              state={this.state} 
-              changeTab={this.changeTab.bind(this)} 
-              toggleSideBar={this.toggleSideBar.bind(this)}
-            />
-            <Advertisement unit='half page' test={this.state.activeTab.toUpperCase()} centered/>
-          </Sidebar.Pusher>
-        </Sidebar.Pushable>
-      </div>
+    	<HashRouter>
+			<Switch>
+			<Route exact path="/" component={LoginContainer} />
+			<Route exact path="/home" component={HomeContainer} />
+			<Route exact path="/repositories" component={RepoContainer} />
+			</Switch>
+		</HashRouter>
     );
   }
 }

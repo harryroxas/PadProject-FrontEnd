@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Sidebar, Menu, Icon } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 class NavSidebar extends Component {
     render() {
@@ -7,8 +8,8 @@ class NavSidebar extends Component {
 
         return(
             <Sidebar as={Menu} animation='overlay' width='wide' visible={visible} icon='labeled' vertical >
-                <Menu.Item icon='home' name='home' onClick={this.props.clickSidebar} />
-                <Menu.Item icon='folder' name='repositories' onClick={this.props.clickSidebar}/>
+                <Menu.Item as={Link} to='home' icon='home' name='home' onClick={this.props.clickSidebar} />
+                <Menu.Item as={Link} to='repositories' name='repositories' icon='folder' onClick={this.props.clickSidebar} />
             </Sidebar>
         );
     }
