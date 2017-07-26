@@ -20,7 +20,7 @@ class Navigation extends Component {
                         </Menu.Item>
                     </Menu.Menu>
                     <Menu.Menu position='right'>
-                        <Dropdown item text='User' onClick={this.props.changeTab}>
+                        <Dropdown name='user' item text='User' onClick={this.props.changeTab}>
                             <Dropdown.Menu>
                             <Dropdown.Item>My Account</Dropdown.Item>
                             <Dropdown.Item>Log out</Dropdown.Item>
