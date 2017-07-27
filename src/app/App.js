@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Sidebar, Menu, Icon, Advertisement, Segment } from 'semantic-ui-react';
+import { Sidebar, Menu, Icon, Advertisement } from 'semantic-ui-react';
 import '../assets/App.css';
 
 import Navigation from './navigation/Navigation';
 import NavSidebar from './navigation/Sidebar.js';
-import Home from './pages/home/Home';
 
 class App extends Component {
   constructor() {
@@ -39,9 +38,7 @@ class App extends Component {
               changeTab={this.changeTab.bind(this)} 
               toggleSideBar={this.toggleSideBar.bind(this)}
             />
-           <Segment padded>
-              <Home />
-           </Segment>
+            <Advertisement unit='half page' test={this.state.activeTab.toUpperCase()} centered/>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </div>

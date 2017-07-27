@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import Repos from './components/RepoContainer';
+import Repos from './components/HomeRepos';
 
 class Home extends Component {
     render() {
         return(
-            <Repos />
+
         );
     }
 }
