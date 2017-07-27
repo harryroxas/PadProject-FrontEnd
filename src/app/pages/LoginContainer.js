@@ -1,0 +1,52 @@
+import React, { Component } from 'react';
+import { submitLogin } from '../api';
+import Login from './Login';
+
+class LoginContainer extends Component {
+	constructor(){
+		super();
+		this.state = {
+			newEmail: '',
+			newPassword: ''
+		};
+	}
+
+	onSubmitLogin = e => {
+		e.preventDefault();
+
+		const body = {
+			email: this.state.newEmail,
+			password: this.state.newPassword
+		}
+
+		submitLogin(body);
+	}
+
+	onChangeEmail = e => {
+		this.setState({
+			newEmail: e.target.value
+		});
+	};
+
+	onChangePassword = e => {
+		this.setState({
+			newPassword: e.target.value
+		});
+	};
+
+	render() {
+    	return (
+      		<div>
+        		<Login 
+        			email={this.state.newEmail}
+        			password={this.state.newPassword}
+        			onChangeEmail={this.onChangeEmail.bind(this)}
+        			onChangePassword={this.onChangePassword.bind(this)}
+        			onSubmitLogin={this.onSubmitLogin.bind(this)}
+        		/>
+      		</div>
+    	);
+  	}
+}
+
+export default LoginContainer;
