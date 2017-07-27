@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Sidebar, Menu, Icon } from 'semantic-ui-react';
+import { Sidebar, Menu, Icon, Modal } from 'semantic-ui-react';
 
 class NavSidebar extends Component {
     render() {
