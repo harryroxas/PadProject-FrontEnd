@@ -7,7 +7,6 @@ class HomeContainer extends Component {
 	render() {
     	return (
       		<div>
-      			<NavContainer />
       			<Home />
       		</div>
     	);

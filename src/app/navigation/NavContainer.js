@@ -22,6 +22,8 @@ class NavContainer extends Component {
           state={this.state} 
           changeTab={this.changeTab.bind(this)} 
         />
+
+        {this.props.children}
       </div>
     );
   }

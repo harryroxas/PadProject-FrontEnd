@@ -7,7 +7,6 @@ class RepoContainer extends Component {
 	render() {
     	return (
       		<div>
-      			<NavContainer />
       			<Repositories />
       		</div>
     	);

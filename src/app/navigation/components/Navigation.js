@@ -9,8 +9,8 @@ class Navigation extends Component {
         return(
             <Segment padded raised clearing>
                 <Menu pointing secondary fluid>
-                    <Menu.Item active={activeItem==='home'} name='home' onClick={this.props.changeTab} />
-                    <Menu.Item active={activeItem==='repositories'} name='repositories' onClick={this.props.changeTab} />
+                    <Menu.Item as={NavLink} to='home' active={activeItem==='home'} name='home' onClick={this.props.changeTab} />
+                    <Menu.Item as={NavLink} to='repositories' active={activeItem==='repositories'} name='repositories' onClick={this.props.changeTab} />
                     <Menu.Menu position='right'>
                         <Dropdown name='user' item text='User' onClick={this.props.changeTab}>
                             <Dropdown.Menu>
