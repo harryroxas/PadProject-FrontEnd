@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
-import Navigation from './navigation/Navigation';
-import LoginContainer from './pages/LoginContainer';
-import RepoContainer from './pages/RepoContainer';
-import HomeContainer from './pages/HomeContainer';
+import LoginContainer from './pages/login/LoginContainer';
+import RepoContainer from './pages/repositories/RepoContainer';
+import HomeContainer from './pages/home/HomeContainer';
 
 class App extends Component {
   render() {

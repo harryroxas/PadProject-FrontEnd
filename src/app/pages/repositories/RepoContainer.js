@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import Layout from '../components/Layout';
-import Repositories from './Repositories';
+import NavContainer from '../../navigation/NavContainer';
+import Repositories from './components/Repositories';
 
 class RepoContainer extends Component {
 	render() {
     	return (
       		<div>
-      			<Layout />
+      			<NavContainer />
       			<Repositories />
       		</div>
     	);

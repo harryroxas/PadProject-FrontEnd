@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Sidebar, Menu, Icon, Advertisement } from 'semantic-ui-react';
+import { Menu, Icon, Advertisement } from 'semantic-ui-react';
 
-import Navigation from '../navigation/Navigation';
+import Navigation from './components/Navigation';
 
-class Layout extends Component {
+class NavContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -27,4 +27,4 @@ class Layout extends Component {
   }
 }
 
-export default Layout;
+export default NavContainer;
