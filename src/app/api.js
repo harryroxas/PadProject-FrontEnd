@@ -4,5 +4,5 @@ export const submitLogin = body => {
 	return fetch('/users', {method, body}).then(
 		response => response.json(),
 		err => console.log(err)
-		);
+	);
 }

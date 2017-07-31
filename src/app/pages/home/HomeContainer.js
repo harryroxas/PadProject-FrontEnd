@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import Layout from '../components/Layout';
-import Home from './Home';
+import NavContainer from '../../navigation/NavContainer';
+import Home from './components/Home';
 
 class HomeContainer extends Component {
 	render() {
     	return (
       		<div>
-      			<Layout />
+      			<NavContainer />
       			<Home />
       		</div>
     	);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { submitLogin } from '../api';
-import Login from './Login';
+import { submitLogin } from '../../api';
+import Login from './components/Login';
 
 class LoginContainer extends Component {
 	constructor(){
