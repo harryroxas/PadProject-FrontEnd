@@ -11,8 +11,8 @@ class App extends Component {
     return (
     	<Router history={withRouter}>
       <div>
-      <NavContainer />
           <Route exact path="/" component={LoginContainer} />
+          <NavContainer />
           <Route exact path="/home" component={HomeContainer} />
           <Route exact path="/repositories" component={RepoContainer} />
         </div>

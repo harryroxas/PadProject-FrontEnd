@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
 
-import NavContainer from '../../navigation/NavContainer';
 import Repositories from './components/Repositories';
 
 class RepoContainer extends Component {
+	constructor(){
+		super();
+		this.state = {
+			activeItem: 'major'
+		};
+	}
+
+	onItemClick = (e, {name}) => {
+		this.setState({ 
+			activeItem: name 
+		});
+	};
+
 	render() {
     	return (
       		<div>
-      			<Repositories />
+      			<Repositories 
+      				activeItem={this.state.activeItem}
+      				onItemClick={this.onItemClick.bind(this)}
+      			/>
       		</div>
     	);
   	}
