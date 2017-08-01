@@ -10,11 +10,11 @@ class App extends Component {
   render() {
     return (
     	<Router history={withRouter}>
-      <div>
-      <NavContainer />
-          <Route exact path="/" component={LoginContainer} />
-          <Route exact path="/home" component={HomeContainer} />
-          <Route exact path="/repositories" component={RepoContainer} />
+        <div>
+          <NavContainer />
+          
+          <Route exact path="/" component={HomeContainer} />
+          <Route path="/repositories" component={RepoContainer} />
         </div>
 	  	</Router>
     );
