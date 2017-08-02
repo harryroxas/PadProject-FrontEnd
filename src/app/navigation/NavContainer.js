@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Menu, Icon, Advertisement } from 'semantic-ui-react';
 
 import Navigation from './components/Navigation';
 

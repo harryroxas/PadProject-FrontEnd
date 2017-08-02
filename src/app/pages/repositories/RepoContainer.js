@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container } from 'semantic-ui-react';
 
 import Repositories from './components/Repositories';
 
@@ -17,13 +18,14 @@ class RepoContainer extends Component {
 	};
 
 	render() {
+
     	return (
-      		<div>
+      		<Container text>
       			<Repositories 
       				activeItem={this.state.activeItem}
       				onItemClick={this.onItemClick.bind(this)}
       			/>
-      		</div>
+      		</Container>
     	);
   	}
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Segment, Input, Dropdown } from 'semantic-ui-react';
+import { Menu, Segment, Dropdown } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom'; 
 
 class Navigation extends Component {
