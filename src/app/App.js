@@ -9,7 +9,7 @@ import NavContainer from './navigation/NavContainer';
 
 import subjects from './subjects';
 
-import { getRepoData } from './utils/api';
+import { getRepoData } from './api/api';
 
 class App extends Component {
   constructor() {
