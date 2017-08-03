@@ -9,6 +9,8 @@ import NavContainer from './navigation/NavContainer';
 
 import data from './dummy';
 
+import { getRepoData } from './utils/api';
+
 class App extends Component {
   constructor() {
     super();
@@ -27,7 +29,7 @@ class App extends Component {
 
 
   render() {
-    return (
+      return (
     	<Router history={withRouter}>
       <div>
           <Route exact path="/" component={LoginContainer} />

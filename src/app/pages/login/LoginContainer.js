@@ -18,7 +18,6 @@ class LoginContainer extends Component {
 			password: this.state.newPassword
 		}
 
-
 	}
 
 	onChangeEmail = e => {
