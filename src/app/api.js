@@ -1,4 +1,4 @@
-export const submitLogin = body => {
+export const createUser = body => {
 	const method = 'POST';
 	body = JSON.stringify(body);
 	return fetch('/users', {method, body}).then(

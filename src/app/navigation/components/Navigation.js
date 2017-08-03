@@ -1,23 +1,18 @@
-import React, { Component } from 'react';
-import { Menu, Segment, Input, Dropdown } from 'semantic-ui-react';
-import { Link } from 'react-router-dom'; 
+import React from 'react';
+import { Menu, Segment, Dropdown } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom'; 
 
-class Navigation extends Component {
-    render() {
-        const activeItem = this.props.state.activeTab;
-
-        const style = {
-            fontSize: 15,
-            fontFamily: 'sans-serif',
-        }
-        
+const Navigation = ({
+    activeTab,
+    onChangeTab
+}) => {
         return(
-            <Segment padded raised clearing inverted color='blue'>
-                <Menu secondary fluid inverted style={style}>
-                    <Menu.Item as={Link} to='/' active={activeItem==='home'} name='home' onClick={this.props.changeTab} />
-                    <Menu.Item as={Link} to='repositories' active={activeItem==='repositories'} name='repositories' onClick={this.props.changeTab} />
+            <Segment padded raised clearing>
+                <Menu pointing secondary fluid>
+                    <Menu.Item as={NavLink} to='home' active={activeTab==='home'} name='home' onClick={onChangeTab} />
+                    <Menu.Item as={NavLink} to='repositories' active={activeTab==='repositories'} name='repositories' onClick={onChangeTab} />
                     <Menu.Menu position='right'>
-                        <Dropdown item text='User'>
+                        <Dropdown name='user' item text='User' onClick={onChangeTab}>
                             <Dropdown.Menu>
                                 <Dropdown.Item>My Account</Dropdown.Item>
                                 <Dropdown.Item>Sign Out</Dropdown.Item>
@@ -27,7 +22,6 @@ class Navigation extends Component {
                 </Menu>
             </Segment>
         );
-    }
 }
 
 export default Navigation;
