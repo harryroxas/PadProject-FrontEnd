@@ -9,11 +9,9 @@ class SubjCardContainer extends Component {
 		const {repos} = this.props;
 
     	return (
-      		<Card.Group stackable itemsPerRow={2}>
-      			{repos.map((repo) => {
-      				if(repo.type === this.props.activeItem){
-      					return <SubjCard key={repo.id} subjName={repo.subject} description={repo.description}/>
-      				}
+      		<Card.Group stackable itemsPerRow={3}>
+      			{repos.map((repo) => { 
+              return <SubjCard key={repo.id} subjName={repo.subject} description={repo.description}/>
       			})}
       		</Card.Group>
     	);
