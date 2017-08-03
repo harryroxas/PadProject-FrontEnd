@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card } from 'semantic-ui-react';
 
-import SubjCard from './components/SubjCard';
+import SubjCard from './SubjCard';
 
 class SubjCardContainer extends Component {
 
