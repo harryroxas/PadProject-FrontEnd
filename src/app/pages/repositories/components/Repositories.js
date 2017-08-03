@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Segment, Menu, Grid } from 'semantic-ui-react';
 
-import SubjCardContainer from '../SubjCardContainer'
+import SubjCardContainer from './SubjCardContainer'
 
 const Repositories = ({
 	activeItem,
@@ -23,6 +23,10 @@ const Repositories = ({
       		</Grid>
 		</div>
 	);
+}
+
+const style = {
+	textAlign: 'center'
 }
 
 export default Repositories

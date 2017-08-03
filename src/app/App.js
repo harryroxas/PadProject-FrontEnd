@@ -7,6 +7,10 @@ import RepoContainer from './pages/repositories/RepoContainer';
 import HomeContainer from './pages/home/HomeContainer';
 import NavContainer from './navigation/NavContainer';
 
+import subjects from './subjects';
+
+import { getRepoData } from './utils/api';
+
 class App extends Component {
   constructor() {
     super();
@@ -15,8 +19,12 @@ class App extends Component {
     }
   }
 
-  componentWillMount(){
-    
+  componentDidMount(){
+    const {repos} = this.state;
+    repos.push(...subjects);
+
+    this.setState({repos});
+    console.log(this.state.repos);
   }
 
 
