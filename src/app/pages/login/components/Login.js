@@ -11,50 +11,55 @@ const Login = ({
   }) => {
     return (
       <div>
-      <Grid container verticalAlign="middle" style={{height: '100vh', marginTop: '-52px' }}>
-      <GridRow>
-      <GridColumn width={5} />
-      <GridColumn width={7}>
-      <Header textAlign="center">Iskollection</Header>
-      <Segment>
-      <Form onSubmit={onSubmitLogin}>
-      <Grid>
-      <GridRow>
-        <GridColumn>
-        <Form.Field>
-          <label>Email</label>
-          <input 
-            value={email}
-            placeholder='Email'
-            onChange={onChangeEmail}
-          />
-        </Form.Field>
-        </GridColumn>
-      </GridRow>
-      <GridRow>
-        <GridColumn>
-        <Form.Field>
-          <label>Password</label>
-          <input
-            type="password"
-            value={password}
-            placeholder='Password'
-            onChange={onChangePassword}
-            />
-        </Form.Field>
-        </GridColumn>
-      </GridRow>
-      <GridRow centered>
-        <GridColumn>
-        <Button as={Link} to='home' primary fluid type='submit'>Login</Button>
-        </GridColumn>
-      </GridRow>
-      </Grid>
-      </Form>
-      </Segment>
-      </GridColumn>
-      </GridRow>
-      </Grid>
+        <Grid container verticalAlign="middle" style={{height: '100vh', marginTop: '-52px' }}>
+          <GridRow>
+            <GridColumn width={5} />
+            <GridColumn width={7}>
+              <Header textAlign="center">Iskollection</Header>
+              <Segment>
+                <Form onSubmit={onSubmitLogin}>
+                <Grid>
+                  <GridRow>
+                    <GridColumn>
+                      <Form.Field>
+                        <label>Email</label>
+                        <input 
+                          value={email}
+                          placeholder='Email'
+                          onChange={onChangeEmail}
+                        />
+                      </Form.Field>
+                    </GridColumn>
+                  </GridRow>
+                  <GridRow>
+                    <GridColumn>
+                      <Form.Field>
+                        <label>Password</label>
+                        <input
+                          type="password"
+                          value={password}
+                          placeholder='Password'
+                          onChange={onChangePassword}
+                          />
+                      </Form.Field>
+                    </GridColumn>
+                  </GridRow>
+                  <GridRow centered>
+                    <GridColumn>
+                      <Button as={Link} to='home' primary fluid type='submit'>Login</Button>
+                    </GridColumn>
+                  </GridRow>
+                  <GridRow centered>
+                    <GridColumn>
+                      <Button as={Link} to='register' secondary fluid type='submit'>Register</Button>
+                    </GridColumn>
+                  </GridRow>
+                </Grid>
+                </Form>
+              </Segment>
+            </GridColumn>
+          </GridRow>
+        </Grid>
       </div>
     );
   }
