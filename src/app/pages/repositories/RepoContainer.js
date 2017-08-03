@@ -4,8 +4,8 @@ import { Container } from 'semantic-ui-react';
 import Repositories from './components/Repositories';
 
 class RepoContainer extends Component {
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 		this.state = {
 			activeItem: 'major'
 		};
@@ -18,12 +18,14 @@ class RepoContainer extends Component {
 	};
 
 	render() {
+		const {repos} = this.props;
 
     	return (
-      		<Container text>
+      		<Container>
       			<Repositories 
       				activeItem={this.state.activeItem}
       				onItemClick={this.onItemClick.bind(this)}
+      				repos={repos}
       			/>
       		</Container>
     	);

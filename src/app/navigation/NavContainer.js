@@ -18,11 +18,9 @@ class NavContainer extends Component {
     return (
       <div className="App">
         <Navigation 
-          state={this.state} 
-          changeTab={this.changeTab.bind(this)} 
+          activeTab={this.state.activeTab} 
+          onChangeTab={this.changeTab.bind(this)} 
         />
-
-        {this.props.children}
       </div>
     );
   }
