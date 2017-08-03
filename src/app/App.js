@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
 
-import LoggedIn from './pages/LoggedIn';
-import AnonUser from './pages/AnonUser';
+import LoginContainer from './pages/login/LoginContainer';
+import RegisterContainer from './pages/register/RegisterContainer';
+import RepoContainer from './pages/repositories/RepoContainer';
+import HomeContainer from './pages/home/HomeContainer';
+import NavContainer from './navigation/NavContainer';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      repos: [],
-      isLoggedIn: false
+      repos: []
     }
   }
 
-  componentDIdMount(){
+  componentWillMount(){
     
   }
 
@@ -22,8 +24,12 @@ class App extends Component {
       return (
     	<Router history={withRouter}>
       <div>
-          {this.state.isLoggedIn ? <LoggedIn /> : <AnonUser />}
-      </div>
+          <Route exact path="/" component={LoginContainer} />
+          <Route exact path="/register" component={RegisterContainer} />
+          <NavContainer />
+          <Route exact path="/home" component={HomeContainer} />
+          <Route path="/repositories" render={() => <RepoContainer repos={this.state.repos} />} />
+        </div>
 	  	</Router>
     );
   }
