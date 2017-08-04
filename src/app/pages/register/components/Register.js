@@ -1,5 +1,6 @@
 import React from 'react';
-import { Header, Segment, Grid, GridRow, GridColumn, Button, Form } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Header, Segment, Grid, GridRow, GridColumn, Button, Form, Label, Icon } from 'semantic-ui-react';
 
 const Register = ({
 	firstName,
@@ -25,19 +26,19 @@ const Register = ({
 									<GridRow>
 										<GridColumn>
 											<Form.Group widths='equal'>
-													<Form.Input label='First Name' placeholder='First Name' />	
-					          						<Form.Input label='Last Name' placeholder='Last Name' />
+													<Form.Input label='First Name' placeholder='First Name' required={true} />	
+					          						<Form.Input label='Last Name' placeholder='Last Name' required={true} />
 											</Form.Group>
 										</GridColumn>
 									</GridRow>
 									<GridRow>
 										<GridColumn>
-											<Form.Input label='Email' placeholder='Email' />
+											<Form.Input label='Email' placeholder='Email' required={true} />
 										</GridColumn>
 									</GridRow>
 									<GridRow>
 										<GridColumn>
-		          							<Form.Input label='Password' type='password' placeholder='Password' />
+		          							<Form.Input label='Password' type='password' placeholder='Password' required={true} />
 		          						</GridColumn>
 		          					</GridRow>
 		          					<GridRow>
@@ -48,6 +49,7 @@ const Register = ({
 		          				</Grid>
 							</Form>
 						</Segment>
+							<Label as={Link} to="/"><Icon name='arrow left' />Back to Login</Label>
 					</GridColumn>
 				</GridRow>
 			</Grid>
