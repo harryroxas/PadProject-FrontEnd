@@ -5,10 +5,12 @@ import Home from './components/Home';
 
 class HomeContainer extends Component {
 	render() {
+		const {repos} = this.props;
+
     	return (
-      		<Container>
-      			<Home />
-      		</Container>
+      		<div>
+      			<Home repos={repos}/>
+      		</div>
     	);
   	}
 }

@@ -10,21 +10,11 @@ class SubjCardContainer extends Component {
 		const {match, repos} = this.props;
 
     	return (
-			<div>
-				<Card.Group stackable itemsPerRow={3}>
-					{repos.map((repo, index) => {
-						return <SubjCard 
-									match={match} 
-									key={index} 
-									subjName={repo.subject} 
-									description={repo.description} 
-									path={repo.path}
-								/>
-					})}
-				</Card.Group>
-
-				<Route path={'/:repo'} />
-			</div>
+      		<Card.Group stackable itemsPerRow={3}>
+      			{repos.map((repo, index) => { 
+              return <SubjCard key={index} subscribed={repo.subscribed} subjName={repo.subject} description={repo.description}/>
+      			})}
+      		</Card.Group>
     	);
   	}
 }
