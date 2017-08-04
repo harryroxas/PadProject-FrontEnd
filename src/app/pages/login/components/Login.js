@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Segment, Grid, GridRow, GridColumn, Button, Form } from 'semantic-ui-react';
+import { Header, Segment, Grid, GridRow, GridColumn, Button, Form, Divider } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Login = ({
@@ -46,12 +46,9 @@ const Login = ({
                   </GridRow>
                   <GridRow centered>
                     <GridColumn>
-                      <Button as={Link} to='home' primary fluid type='submit'>Login</Button>
-                    </GridColumn>
-                  </GridRow>
-                  <GridRow centered>
-                    <GridColumn>
-                      <Button as={Link} to='register' secondary fluid type='submit'>Register</Button>
+                      <Button primary fluid type='submit'>Login</Button>
+                      <Divider horizontal>OR</Divider>
+                      <Button as={Link} to='register' secondary fluid>Register</Button>
                     </GridColumn>
                   </GridRow>
                 </Grid>

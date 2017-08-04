@@ -1,32 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Segment, Menu, Grid } from 'semantic-ui-react';
+import { Segment, Grid } from 'semantic-ui-react';
 
 import SubjCardContainer from './SubjCardContainer'
 
 const Repositories = ({
-	activeItem,
-	onItemClick,
 	repos
 }) => {
 	return (
 		<div>
-			<Grid>
+			<Grid centered>
 				<Grid.Row />
 				<Grid.Row>
         		<Grid.Column stretched width={15}>
           			<Segment>
-          				<SubjCardContainer repos={repos} activeItem={activeItem} />
+          				<SubjCardContainer repos={repos} />
           			</Segment>
         		</Grid.Column>
         		</Grid.Row>
       		</Grid>
 		</div>
 	);
-}
-
-const style = {
-	textAlign: 'center'
 }
 
 export default Repositories

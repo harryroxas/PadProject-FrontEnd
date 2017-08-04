@@ -1,5 +1,6 @@
 import React from 'react';
-import { Header, Segment, Grid, GridRow, GridColumn, Button, Form } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Header, Segment, Grid, GridRow, GridColumn, Button, Form, Label, Icon } from 'semantic-ui-react';
 
 const Register = ({
 	firstName,
@@ -19,7 +20,7 @@ const Register = ({
 					<GridColumn width={5}/>
 					<GridColumn width={7}>
 						<Header textAlign="center">Iskollection</Header>
-						<Segment>
+						<Segment compact>
 							<Form>
 								<Grid>
 									<GridRow>
@@ -48,6 +49,7 @@ const Register = ({
 		          				</Grid>
 							</Form>
 						</Segment>
+							<Label as={Link} to="/"><Icon name='arrow left' />Back to Login</Label>
 					</GridColumn>
 				</GridRow>
 			</Grid>

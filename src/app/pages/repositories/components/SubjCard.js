@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'semantic-ui-react';
 
-const SubjCard = ({subjName, description}) => {
+const SubjCard = ({subscribed, subjName, description}) => {
 	return (	
 		<Card>
 			<Card.Content>
@@ -9,7 +9,10 @@ const SubjCard = ({subjName, description}) => {
 				<Card.Description>{description}</Card.Description>
 			</Card.Content>
 			<Card.Content extra>
-				<Button basic fluid color='blue'>Follow</Button>
+				{
+					subscribed ? <Button fluid negative>Unfollow</Button> : <Button fluid primary>Follow</Button>
+				}
+				<Button fluid positive>Open</Button>
 			</Card.Content>
 		</Card>
 	);
