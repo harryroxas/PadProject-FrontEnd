@@ -1,10 +1,11 @@
 import React from 'react';
 import { Modal, Form } from 'semantic-ui-react';
+import Dropzone from 'react-dropzone';
 
 import options from './options'
 
 const UploadFile = ({
-	trigger
+	trigger, onDrop, files
 }) => {
 	return(
 	<Modal trigger={trigger} closeIcon='close'>
@@ -15,6 +16,13 @@ const UploadFile = ({
 				<Form.Select label='Subject' options={options} placeholder='Subject' />
 				<Form.Button>Upload</Form.Button>
 			</Form>
+		</Modal.Content>
+		<Modal.Content>
+			<div>
+			<Dropzone onDrop={onDrop}>
+				<p>Upload a File</p>
+			</Dropzone>
+			</div>
 		</Modal.Content>
 	</Modal>
 	)

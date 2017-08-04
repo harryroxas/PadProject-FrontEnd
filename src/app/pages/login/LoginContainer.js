@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import Login from './components/Login';
+import { login } from '../../api/api';
 
 class LoginContainer extends Component {
 	constructor(){
@@ -18,6 +20,9 @@ class LoginContainer extends Component {
 			password: this.state.newPassword
 		}
 
+		login(body).then(response => {
+			console.log(response);
+		})
 	}
 
 	onChangeEmail = e => {
