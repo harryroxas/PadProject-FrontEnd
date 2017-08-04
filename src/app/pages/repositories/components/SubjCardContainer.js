@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 import { Card } from 'semantic-ui-react';
+import { Route } from 'react-router-dom';
 
-import SubjCard from './components/SubjCard';
+import SubjCard from './SubjCard';
 
 class SubjCardContainer extends Component {
 
 	render() {
-		const {repos} = this.props;
+		const {match, repos} = this.props;
 
     	return (
-      		<Card.Group stackable itemsPerRow={3}>
-      			{repos.map((repo) => { 
-              return <SubjCard key={repo.id} subjName={repo.subject} description={repo.description}/>
-      			})}
-      		</Card.Group>
+			<div>
+				<Card.Group stackable itemsPerRow={3}>
+					{repos.map((repo, index) => {
+						return <SubjCard 
+									match={match} 
+									key={index} 
+									subjName={repo.subject} 
+									description={repo.description} 
+									path={repo.path}
+								/>
+					})}
+				</Card.Group>
+
+				<Route path={'/:repo'} />
+			</div>
     	);
   	}
 }

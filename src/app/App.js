@@ -9,22 +9,27 @@ import NavContainer from './navigation/NavContainer';
 
 import subjects from './subjects';
 
-import { getRepoData } from './api/api';
+import { getUsers } from './api/api';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      repos: []
+      repos: [],
+      users: []
     }
   }
 
   componentDidMount(){
-    const {repos} = this.state;
+    const {repos, users} = this.state;
     repos.push(...subjects);
 
-    this.setState({repos});
-    console.log(this.state.repos);
+    getUsers().then(userdata => {
+      users.push(...userdata.items)
+    })
+
+    this.setState({repos, users});
+    console.log(this.state)
   }
 
 
@@ -36,7 +41,7 @@ class App extends Component {
           <Route exact path="/register" component={RegisterContainer} />
           <NavContainer />
           <Route exact path="/home" component={HomeContainer} />
-          <Route path="/repositories" render={() => <RepoContainer repos={this.state.repos} />} />
+          <Route path="/repositories" render={(props) => <RepoContainer {...props} repos={this.state.repos} />} />
         </div>
 	  	</Router>
     );

@@ -5,8 +5,7 @@ import { Segment, Menu, Grid } from 'semantic-ui-react';
 import SubjCardContainer from './SubjCardContainer'
 
 const Repositories = ({
-	activeItem,
-	onItemClick,
+	match,
 	repos
 }) => {
 	return (
@@ -16,7 +15,7 @@ const Repositories = ({
 				<Grid.Row>
         		<Grid.Column stretched width={15}>
           			<Segment>
-          				<SubjCardContainer repos={repos} activeItem={activeItem} />
+          				<SubjCardContainer match={match} repos={repos} />
           			</Segment>
         		</Grid.Column>
         		</Grid.Row>

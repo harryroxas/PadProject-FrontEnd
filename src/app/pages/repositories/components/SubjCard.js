@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Button } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
-const SubjCard = ({subjName, description}) => {
+const SubjCard = ({match, subjName, description, path}) => {
 	return (	
 		<Card>
 			<Card.Content>
@@ -9,10 +10,11 @@ const SubjCard = ({subjName, description}) => {
 				<Card.Description>{description}</Card.Description>
 			</Card.Content>
 			<Card.Content extra>
-				<Button basic fluid color='blue'>Follow</Button>
+				<Button fluid primary>Follow</Button>
+				<Button fluid positive as={NavLink} to={`${match.url}/${path}`}>Open</Button>
 			</Card.Content>
 		</Card>
 	);
 }
 
-export default SubjCard
+export default SubjCard;
