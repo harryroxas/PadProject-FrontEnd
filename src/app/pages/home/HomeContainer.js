@@ -4,9 +4,11 @@ import Home from './components/Home';
 
 class HomeContainer extends Component {
 	render() {
+		const {repos} = this.props;
+
     	return (
       		<div>
-      			<Home />
+      			<Home repos={repos}/>
       		</div>
     	);
   	}

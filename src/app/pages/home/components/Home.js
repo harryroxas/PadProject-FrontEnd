@@ -1,10 +1,11 @@
 import React from 'react';
-import { Segment, Header, Grid, GridRow, GridColumn } from 'semantic-ui-react';
 
-const Home = (props) => {
+import SubscribedContainer from './SubscribedContainer';
+
+const Home = ({repos}) => {
 	return (
 		<div>
-			
+			<SubscribedContainer repos={repos}/>
 		</div>
 	);
 }

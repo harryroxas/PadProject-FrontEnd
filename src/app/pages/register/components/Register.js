@@ -19,7 +19,7 @@ const Register = ({
 					<GridColumn width={5}/>
 					<GridColumn width={7}>
 						<Header textAlign="center">Iskollection</Header>
-						<Segment>
+						<Segment compact>
 							<Form>
 								<Grid>
 									<GridRow>
